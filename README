@@ -18,6 +18,11 @@ necessary as root):
 
     make clean install
 
+Alternative install (for arch based distributions)
+    For installind this dmenu build on arch based distributions (aka installation via the pacman package manager) you can use the PKGBUILD provided in this repository. Download the file and run the following commands:
+1. makepkg -cf (This command will generate a file with the extention .pkg.tar.zst)
+2. sudo pacman -U *.pkg.tar.zst (Installs the local package provided in the previeously generated archive)
+
 
 Running dwm
 -----------
@@ -46,6 +51,7 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
 
 Patches
 -------
