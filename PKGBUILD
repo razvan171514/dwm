@@ -1,6 +1,6 @@
 # Maintainer: Razvan Bolundut <youremail@domain.com>
 pkgname=dwm-razvan-git
-pkgver=6.2.r12.8b6067b
+pkgver=6.2.r14.edae046
 pkgrel=1
 epoch=
 pkgdesc="Personal build of dwm. The list of applied patches is available on the github repository in the file entitled list-of-patches.readme"
@@ -11,7 +11,10 @@ groups=()
 depends=(libx11 libxinerama libxft)
 makedepends=(git make)
 checkdepends=()
-optdepends=()
+optdepends=('firefox: web browser'
+	'alacritty: terminal emulator (alternative to st)'
+	'nitrogen: wallpaper setter'
+	'htop: task manager')
 provides=(dwm)
 conflicts=(dwm)
 replaces=()
