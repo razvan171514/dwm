@@ -64,12 +64,13 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", "dmenu:"};
+static const char *dmenucmd[] = { "dmenu_run", "-p", "dmenu:" };
+/* change this array in order to change terminal emulator */
 static const char *termcmd[]  = { "st", "-z", "18" };
 
-//static const char *alacrittycmd[] = {"alacritty", NULL};
-static const char *firefoxcmd[] = {"firefox", NULL};
-static const char *htopcmd[] = {"alacritty", "-t", "Htop task manager", "-e", "htop"};
+static const char *firefoxcmd[] = { "firefox", NULL };
+static const char *htopcmd[] = { termcmd[0], "-t", "Htop task manager", "-e", "htop" };
+static const char *vifmcmd[] = { termcmd[0], "-t", "vifm", "-e", "vifm" };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -78,6 +79,7 @@ static Key keys[] = {
 	{ MODKEY,         		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_h,	   spawn,	   {.v = htopcmd } },
 	{ ALTKEY|ShiftMask,		XK_Return, spawn,	   {.v = firefoxcmd } },
+	{ MODKEY|ShiftMask,		XK_m,	   spawn,	   {.v = vifmcmd } },
 	{ ALTKEY,			XK_n,	   spawn,	   SHCMD("nitrogen --set-scaled --random ~/.config/wallpapers/") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

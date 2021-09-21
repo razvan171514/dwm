@@ -15,6 +15,7 @@ optdepends=('firefox: web browser'
 	'alacritty: terminal emulator (alternative to st)'
 	'nitrogen: wallpaper setter'
 	'htop: task manager')
+	'vifm: terminal based file manager'
 provides=(dwm)
 conflicts=(dwm)
 replaces=()
