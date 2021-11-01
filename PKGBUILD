@@ -42,6 +42,11 @@ package() {
 	cd dwm
 	mkdir -p ${pkgdir}/opt/${pkgname}
 	cp -rf * ${pkgdir}/opt/${pkgname}
+	if [[! -d $HOME/.dwm ]];
+	then
+	    mkdir -p $HOME/.dwm
+	fi
+	cp -rf autostart.sh $HOME/.dwm
 	make PREFIX=/usr DESTDIR="${pkgdir}" clean install
 	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 	install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README"
