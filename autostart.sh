@@ -7,5 +7,7 @@ function run {
     fi
 }
 
+run slstatus &
 run "picom"
 run "nitrogen --restore"
+
